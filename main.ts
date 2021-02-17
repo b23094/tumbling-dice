@@ -1,4 +1,62 @@
 let diceroll = 0
+function rollWait () {
+    basic.showLeds(`
+        . . . . .
+        . # # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . # # .
+        . . . # .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . # .
+        . . . # .
+        . . . # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . # .
+        . . # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . # . . .
+        . # # . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # . . .
+        . # . . .
+        . # . . .
+        . . . . .
+        `)
+}
 function roll2 () {
     basic.showLeds(`
         . . . . #
@@ -501,64 +559,6 @@ function roll4 () {
         `)
     basic.pause(10000)
     basic.clearScreen()
-}
-function rollwait () {
-    basic.showLeds(`
-        . . . . .
-        . # # . .
-        . # . . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . # # .
-        . . . # .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . # .
-        . . . # .
-        . . . # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . # .
-        . . # # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . # # # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . # . . .
-        . # # . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # . . .
-        . # . . .
-        . # . . .
-        . . . . .
-        `)
 }
 input.onButtonPressed(Button.B, function () {
     rollStart()
