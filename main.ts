@@ -118,6 +118,66 @@ function roll1 () {
         `)
     basic.pause(10000)
 }
+function rollStart () {
+    music.playMelody("E B C5 A B G A F ", 150)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.showLeds(`
+        # . . . #
+        . . . . .
+        . . . . .
+        . . . . .
+        # . . . #
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        . # . # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showString("???")
+}
 function roll5 () {
     basic.showLeds(`
         # . # . #
@@ -442,64 +502,85 @@ function roll4 () {
     basic.pause(10000)
     basic.clearScreen()
 }
+function rollwait () {
+    basic.showLeds(`
+        . . . . .
+        . # # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . # # .
+        . . . # .
+        . . . . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . # .
+        . . . # .
+        . . . # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . # .
+        . . # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . # . . .
+        . # # . .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . # . . .
+        . # . . .
+        . # . . .
+        . . . . .
+        `)
+}
+input.onButtonPressed(Button.B, function () {
+    rollStart()
+    for (let index = 0; index < 2; index++) {
+        diceroll = randint(0, 6)
+        if (diceroll == 1) {
+            roll1()
+        } else if (diceroll == 2) {
+            roll2()
+        } else if (diceroll == 3) {
+            roll3()
+        } else if (diceroll == 4) {
+            roll4()
+        } else if (diceroll == 5) {
+            roll5()
+        } else if (diceroll == 6) {
+            roll6()
+        }
+    }
+})
 input.onGesture(Gesture.Shake, function () {
-    basic.showLeds(`
-        # # # # #
-        # . . . #
-        # . . . #
-        # . . . #
-        # # # # #
-        `)
-    basic.showLeds(`
-        # . . . #
-        . . . . .
-        . . . . .
-        . . . . .
-        # . . . #
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . . . .
-        . # . # .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
-    basic.showString("???")
+    rollStart()
     diceroll = randint(0, 6)
     if (diceroll == 1) {
         roll1()
@@ -514,7 +595,4 @@ input.onGesture(Gesture.Shake, function () {
     } else if (diceroll == 6) {
         roll6()
     }
-})
-basic.forever(function () {
-	
 })
